@@ -118,7 +118,14 @@ const btnResetDefaults = document.getElementById("btn-reset-defaults");
 function initAdmin() {
     // 1. Set default URL for QR Code based on current page URL
     const currentURL = window.location.href;
-    const menuURL = currentURL.replace("admin.html", "index.html");
+    let menuURL = currentURL.replace("admin.html", "index.html");
+    
+    // Default to the production Vercel URL for professional shareable QR codes
+    if (currentURL.includes("localhost") || currentURL.includes("127.0.0.1") || currentURL.startsWith("file:")) {
+        menuURL = "https://degisik-mutfak-menu.vercel.app/";
+    } else {
+        menuURL = currentURL.replace("admin.html", "");
+    }
     qrUrlInput.value = menuURL;
 
     // 2. Initialise QR Code Generator
