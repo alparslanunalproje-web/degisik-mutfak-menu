@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Değişik Mutfak | Karekod Menü</title>
+    <meta name="description" content="Değişik Mutfak'ın sıra dışı lezzetlerini keşfedin. Modern ve dijital karekod menümüz.">
+    <!-- Google fonts are imported in style.css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <!-- Header -->
+        <header class="menu-header">
+            <div class="logo-container">
+                <img src="assets/logo.png" alt="Değişik Mutfak Logo" class="logo-img" onerror="this.src='https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=100&auto=format&fit=crop';">
+                <h1 class="brand-name">Değişik Mutfak</h1>
+            </div>
+            <p class="brand-subtitle">Sıra Dışı Lezzet Deneyimi</p>
+        </header>
+
+        <!-- Search and Filter Bar -->
+        <div class="search-filter-wrapper">
+            <div class="search-box">
+                <input type="text" id="search-input" class="search-input" placeholder="Menüde ara... (Örn. salata, tatlı)">
+                <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- Categories Slider (Horizontal) -->
+        <div class="categories-container" id="categories-slider">
+            <button class="category-pill active" data-category="all">Tümü</button>
+            <button class="category-pill" data-category="starters">Sıra Dışı Girişler</button>
+            <button class="category-pill" data-category="mains">Sınırları Zorlayanlar</button>
+            <button class="category-pill" data-category="desserts">Tatlı Kaçamaklar</button>
+            <button class="category-pill" data-category="drinks">Sıra Dışı Yudumlar</button>
+        </div>
+
+        <!-- Quick Diet Filters -->
+        <div class="quick-filters">
+            <button class="filter-btn" data-filter="chef">
+                ⭐ Şefin Seçimi
+            </button>
+            <button class="filter-btn" data-filter="veggie">
+                🌱 Vejetaryen
+            </button>
+            <button class="filter-btn" data-filter="vegan">
+                🍀 Vegan
+            </button>
+            <button class="filter-btn" data-filter="spicy">
+                🌶️ Acılı
+            </button>
+        </div>
+
+        <!-- Menu List Area -->
+        <main class="menu-list-container" id="menu-list">
+            <!-- Dynamically populated categories and cards will go here -->
+        </main>
+
+        <!-- Footer -->
+        <footer style="margin-top: auto; padding: 40px 20px 20px; text-align: center; font-size: 12px; color: var(--text-muted);">
+            <p>© 2026 Değişik Mutfak. Tüm hakları saklıdır.</p>
+            <p style="margin-top: 10px;">
+                <a href="admin.html" style="color: var(--primary); text-decoration: none; font-weight: 600;">⚙️ Yönetim Paneli & QR Oluşturucu</a>
+            </p>
+        </footer>
+
+    </div>
+
+    <!-- Product Detail Modal (Bottom Sheet style) -->
+    <div class="modal-overlay" id="product-modal">
+        <div class="modal-sheet">
+            <div class="modal-img-container">
+                <img id="modal-image" src="" alt="" class="modal-img">
+                <button class="modal-close-btn" id="modal-close">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="modal-header-info">
+                    <h3 class="modal-title" id="modal-title">Ürün Adı</h3>
+                    <span class="modal-price" id="modal-price">0.00 ₺</span>
+                </div>
+                <div class="menu-item-badges" id="modal-badges" style="margin-bottom: 16px;">
+                    <!-- Badges go here -->
+                </div>
+                <p class="modal-desc" id="modal-description">Ürün açıklaması burada yer alacak.</p>
+                
+                <div class="modal-divider"></div>
+                
+                <div class="detail-section-title">Alerjenler / Hassasiyetler</div>
+                <div class="allergen-list" id="modal-allergens">
+                    <!-- Allergens go here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/menu.js"></script>
+</body>
+</html>
