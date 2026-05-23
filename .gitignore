@@ -1,5 +1,12 @@
 .DS_Store
 node_modules/
+.next/
+out/
+build/
 .vercel/
+.vercel
 *.log
 .gemini/
+.env*.local
+*.tsbuildinfo
+next-env.d.ts
